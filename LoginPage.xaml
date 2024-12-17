@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPTI.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout>
+            <Frame BorderColor="Transparent" HeightRequest="150"
+                   WidthRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <Image Source="https://www.anodo.ru/include/logo.png" Aspect="AspectFit"/>
+            </Frame>
+        </StackLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            
+            <Label Grid.Row="0" Text="Вход в аккаунт" FontAttributes="Bold" FontSize="20" 
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="End"/>
+
+            <StackLayout Grid.Row="1">
+                <Frame WidthRequest="240" VerticalOptions="CenterAndExpand" HeightRequest="50" Margin="5" BackgroundColor="#c8d9e6" CornerRadius="50">
+                    <Entry Text="{Binding UserName}" Placeholder="Логин" PlaceholderColor="White" TextColor="Black" FontAttributes="Bold"
+                    VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="200" HeightRequest="50"/>
+                </Frame>
+                <Frame WidthRequest="240" VerticalOptions="CenterAndExpand" HeightRequest="50" Margin="5" BackgroundColor="#c8d9e6" CornerRadius="50">
+                    <Entry Text="{Binding Password}" Placeholder="Пароль" PlaceholderColor="White" TextColor="Black" FontAttributes="Bold"
+                    VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="200" HeightRequest="50" IsPassword="True"/>
+                </Frame>
+                <Frame WidthRequest="240" VerticalOptions="CenterAndExpand" HeightRequest="50" Margin="5" BackgroundColor="#c8d9e6" CornerRadius="50">
+                    <Picker Title="Населенный пункт" TitleColor="White" HeightRequest="50">
+                        <Picker.Items>
+                            <x:String>C#</x:String>
+                            <x:String>JavaScript</x:String>
+                            <x:String>Java</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Frame>
+            </StackLayout>
+                      
+            <Button Grid.Row="3" WidthRequest="200" Margin="5" Text="Войти"/>
+
+        </Grid>
+
+
+    </Grid>
+
+</ContentPage>
